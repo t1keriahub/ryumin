@@ -1,245 +1,130 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>교사 직업 소개</title>
+    <meta charset="UTF-8">
+    <title>생명과학 교사의 길</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "맑은 고딕", Arial, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-    }
+    <style>
+        body {
+            font-family: "맑은 고딕", sans-serif;
+            margin: 0;
+            background-color: #f4fff4;
+        }
 
-    header {
-      background-color: #4a90e2;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
+        nav {
+            background-color: #388E3C;
+            text-align: center;
+            padding: 10px;
+        }
 
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-weight: bold;
+        }
 
-    nav {
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-    }
+        section {
+            margin: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
 
-    nav button {
-      border: none;
-      background-color: #e9f2ff;
-      padding: 12px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 15px;
-    }
+        h2 {
+            color: #2E7D32;
+        }
 
-    nav button:hover {
-      background-color: #4a90e2;
-      color: white;
-    }
-
-    nav button.active {
-      background-color: #4a90e2;
-      color: white;
-    }
-
-    section {
-      display: none;
-      max-width: 900px;
-      margin: 30px auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    section.active {
-      display: block;
-    }
-
-    h2 {
-      color: #4a90e2;
-      border-bottom: 2px solid #4a90e2;
-      padding-bottom: 10px;
-    }
-
-    p {
-      line-height: 1.8;
-      font-size: 17px;
-    }
-
-    ul {
-      line-height: 2;
-      font-size: 17px;
-    }
-
-    .image-box {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .image-box img {
-      width: 80%;
-      max-width: 500px;
-      border-radius: 15px;
-    }
-
-    .card-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .card {
-      flex: 1;
-      min-width: 220px;
-      background-color: #f0f6ff;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .card h3 {
-      color: #2f6fb3;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #333;
-      color: white;
-      margin-top: 40px;
-    }
-  </style>
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>교사 직업 소개</h1>
-    <p>학생들의 꿈과 성장을 함께 만들어가는 직업</p>
-  </header>
+<header>
+    <h1>생명과학 교사의 길</h1>
+    <p>생명과학 교사가 되기 위한 과정과 교과 내용 알아보기</p>
+</header>
 
-  <nav>
-    <button class="tab-button active" onclick="showTab('intro')">직업 소개</button>
-    <button class="tab-button" onclick="showTab('work')">하는 일</button>
-    <button class="tab-button" onclick="showTab('ability')">필요한 능력</button>
-    <button class="tab-button" onclick="showTab('path')">되는 방법</button>
-    <button class="tab-button" onclick="showTab('future')">전망과 가치</button>
-  </nav>
+<nav>
+    <a href="#job">직업 소개</a>
+    <a href="#ability">필요 역량</a>
+    <a href="#subject">교과 연계</a>
+    <a href="#road">진로 로드맵</a>
+</nav>
 
-  <section id="intro" class="active">
-    <h2>교사란?</h2>
+<section id="job">
+    <h2>생명과학 교사란?</h2>
     <p>
-      교사는 학생들에게 지식을 가르치고, 올바른 인성과 태도를 기를 수 있도록 돕는 직업입니다.
-      단순히 교과 내용을 전달하는 사람을 넘어 학생들이 자신의 꿈을 찾고 성장할 수 있도록 이끌어 주는 중요한 역할을 합니다.
+        생명과학 교사는 학생들에게 생명 현상과 생물의 구조,
+        유전, 진화, 생태계 등을 가르치는 교사입니다.
+        실험 활동을 지도하며 학생들의 과학적 탐구 능력을 키워줍니다.
     </p>
+</section>
 
-    <div class="image-box">
-      <img src="teacher.jpg" alt="교사 이미지">
-    </div>
-  </section>
-
-  <section id="work">
-    <h2>교사가 하는 일</h2>
-    <ul>
-      <li>학생들에게 교과 내용을 가르칩니다.</li>
-      <li>학생들의 생활 습관과 인성을 지도합니다.</li>
-      <li>시험, 수행평가, 과제 등을 통해 학습 상태를 평가합니다.</li>
-      <li>진로 상담을 통해 학생들이 미래를 준비하도록 돕습니다.</li>
-      <li>학급 운영, 학교 행사, 동아리 활동 등을 지도합니다.</li>
-    </ul>
-  </section>
-
-  <section id="ability">
-    <h2>교사에게 필요한 능력</h2>
-
-    <div class="card-container">
-      <div class="card">
-        <h3>의사소통 능력</h3>
-        <p>학생들과 잘 대화하고 이해하는 능력이 필요합니다.</p>
-      </div>
-
-      <div class="card">
-        <h3>전문 지식</h3>
-        <p>가르치는 과목에 대한 깊은 이해가 필요합니다.</p>
-      </div>
-
-      <div class="card">
-        <h3>책임감</h3>
-        <p>학생들의 성장에 책임감을 가지고 지도해야 합니다.</p>
-      </div>
-
-      <div class="card">
-        <h3>공감 능력</h3>
-        <p>학생들의 고민과 감정을 이해하는 태도가 중요합니다.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="path">
-    <h2>교사가 되는 방법</h2>
-    <p>
-      교사가 되기 위해서는 보통 사범대학이나 교육대학에 진학하거나,
-      일반 대학에서 교직 과정을 이수해야 합니다.
-      이후 교원 자격증을 취득하고 임용시험에 합격하면 국공립학교 교사가 될 수 있습니다.
-    </p>
+<section id="ability">
+    <h2>생명과학 교사에게 필요한 역량</h2>
 
     <ul>
-      <li>초등교사: 교육대학교 진학</li>
-      <li>중등교사: 사범대학 또는 교직 이수</li>
-      <li>교원 자격증 취득</li>
-      <li>교원 임용시험 준비 및 합격</li>
+        <li>생명과학에 대한 전문 지식</li>
+        <li>의사소통 능력</li>
+        <li>학생 지도 능력</li>
+        <li>실험 설계 및 안전 관리 능력</li>
+        <li>문제 해결 능력</li>
     </ul>
-  </section>
+</section>
 
-  <section id="future">
-    <h2>교사의 전망과 가치</h2>
+<section id="subject">
+    <h2>고등학교 생명과학과의 연계</h2>
+
+    <h3>1. 세포와 물질대사</h3>
     <p>
-      인공지능과 디지털 기술이 발전해도 학생을 이해하고 정서적으로 지지하는 교사의 역할은 여전히 중요합니다.
-      앞으로의 교사는 지식을 전달하는 사람뿐만 아니라 학생의 진로를 함께 고민하고,
-      창의력과 문제 해결력을 키워 주는 조력자의 역할을 하게 될 것입니다.
+        세포의 구조와 기능을 배우며 생명체의 기본 단위를 이해한다.
     </p>
-  </section>
 
-  <footer>
-    <p>© 2026 나의 진로 소개 웹사이트</p>
-  </footer>
+    <h3>2. 유전</h3>
+    <p>
+        DNA와 유전 원리를 학습하여 생명 현상의 유전적 특성을 이해한다.
+    </p>
 
-  <script>
-    function showTab(tabId) {
-      const sections = document.querySelectorAll("section");
-      const buttons = document.querySelectorAll(".tab-button");
+    <h3>3. 항상성과 몸의 조절</h3>
+    <p>
+        신경계와 호르몬의 작용을 통해 생명체의 조절 과정을 학습한다.
+    </p>
 
-      sections.forEach(section => {
-        section.classList.remove("active");
-      });
+    <h3>4. 생태계와 환경</h3>
+    <p>
+        생물과 환경의 상호작용을 배우고 환경 보전의 중요성을 이해한다.
+    </p>
+</section>
 
-      buttons.forEach(button => {
-        button.classList.remove("active");
-      });
+<section id="road">
+    <h2>생명과학 교사가 되는 방법</h2>
 
-      document.getElementById(tabId).classList.add("active");
-      event.target.classList.add("active");
-    }
-  </script>
+    <ol>
+        <li>고등학교에서 생명과학 심화 학습</li>
+        <li>생물교육과 또는 생명과학 관련 학과 진학</li>
+        <li>교직 이수 또는 사범대 졸업</li>
+        <li>중등교사 임용시험 합격</li>
+        <li>생명과학 교사로 근무</li>
+    </ol>
+</section>
+
+<footer>
+    <p>제작자 : ○○고등학교 ○학년 ○○○</p>
+</footer>
 
 </body>
 </html>
