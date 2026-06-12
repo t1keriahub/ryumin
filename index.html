@@ -12,109 +12,116 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Malgun Gothic', sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
+    font-family:"맑은 고딕", sans-serif;
 }
 
 body{
-    background:#f5fff7;
-    color:#333;
+    background:#f4fff6;
 }
 
-/* 네비게이션 */
+/* 상단바 */
 
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(255,255,255,0.95);
-    backdrop-filter:blur(10px);
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    padding:18px;
-    z-index:1000;
+header{
+    background:white;
     box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-nav a{
-    text-decoration:none;
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+    color:#2e7d32;
+}
+
+nav button{
+    border:none;
+    background:none;
+    margin-left:20px;
+    font-size:1rem;
+    cursor:pointer;
     color:#2e7d32;
     font-weight:bold;
     transition:0.3s;
 }
 
-nav a:hover{
+nav button:hover{
     color:#66bb6a;
-    transform:translateY(-2px);
 }
 
-/* 메인 화면 */
+/* 메인화면 */
 
 .hero{
-    height:100vh;
+    height:85vh;
     background:
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
     url("https://images.unsplash.com/photo-1530210124550-912dc1381cb8");
     background-size:cover;
     background-position:center;
-    color:white;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    color:white;
     text-align:center;
     padding:20px;
 }
 
 .hero h1{
     font-size:4rem;
-    animation:fadeUp 1.5s ease;
+    animation:fade 1s;
 }
 
 .hero p{
     margin-top:20px;
     font-size:1.3rem;
     max-width:700px;
-    animation:fadeUp 2s ease;
 }
 
-.btn{
-    margin-top:35px;
+.hero button{
+    margin-top:30px;
+    border:none;
     background:#4caf50;
     color:white;
-    text-decoration:none;
-    padding:15px 35px;
+    padding:15px 30px;
     border-radius:30px;
-    font-weight:bold;
+    cursor:pointer;
+    font-size:1rem;
     transition:0.3s;
 }
 
-.btn:hover{
-    background:#2e7d32;
+.hero button:hover{
     transform:scale(1.05);
+    background:#2e7d32;
 }
 
-/* 공통 */
+/* 페이지 */
 
-section{
-    padding:100px 10%;
+.page{
+    display:none;
+    animation:fade .6s;
+    padding:60px 10%;
 }
 
-.section-title{
+.active{
+    display:block;
+}
+
+/* 제목 */
+
+.title{
     text-align:center;
     color:#2e7d32;
+    margin-bottom:40px;
     font-size:2.3rem;
-    margin-bottom:50px;
 }
 
 /* 카드 */
 
-.card-container{
+.cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
@@ -122,15 +129,14 @@ section{
 
 .card{
     background:white;
-    border-radius:20px;
     padding:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.4s;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.4s;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 12px 25px rgba(0,0,0,0.15);
 }
 
 .card h3{
@@ -142,15 +148,15 @@ section{
 
 .roadmap{
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
 .step{
     background:#4caf50;
     color:white;
-    padding:20px 25px;
+    padding:20px;
     border-radius:15px;
     font-weight:bold;
 }
@@ -158,17 +164,17 @@ section{
 .arrow{
     font-size:2rem;
     color:#4caf50;
-    align-self:center;
 }
 
-/* 나의 진로 */
+/* 꿈 */
 
 .goal{
     background:white;
     padding:40px;
     border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
     text-align:center;
+    line-height:2;
 }
 
 /* 푸터 */
@@ -177,33 +183,24 @@ footer{
     background:#1b5e20;
     color:white;
     text-align:center;
-    padding:30px;
+    padding:20px;
+    margin-top:40px;
 }
 
 /* 애니메이션 */
 
-.hidden{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all 1s;
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
 }
 
-.show{
-    opacity:1;
-    transform:translateY(0);
+to{
+opacity:1;
+transform:translateY(0);
 }
 
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 }
 
 </style>
@@ -211,178 +208,170 @@ footer{
 
 <body>
 
+<header>
+
+<div class="logo">
+🧬 생명과학 교사의 길
+</div>
+
 <nav>
-    <a href="#teacher">교사 소개</a>
-    <a href="#biology">교과 연계</a>
-    <a href="#roadmap">진로 로드맵</a>
-    <a href="#dream">나의 꿈</a>
+<button onclick="showPage('teacher')">교사 소개</button>
+<button onclick="showPage('biology')">교과 연계</button>
+<button onclick="showPage('roadmap')">진로 로드맵</button>
+<button onclick="showPage('dream')">나의 꿈</button>
 </nav>
-
-<header class="hero">
-
-    <h1>🧬 생명과학 교사의 길</h1>
-
-    <p>
-        생명 현상을 탐구하고,
-        학생들의 성장과 미래를 함께 만들어가는
-        생명과학 교사에 대해 알아보자.
-    </p>
-
-    <a href="#teacher" class="btn">
-        자세히 알아보기
-    </a>
 
 </header>
 
-<section id="teacher" class="hidden">
+<section class="hero">
 
-    <h2 class="section-title">생명과학 교사란?</h2>
+<h1>생명과학 교사의 길</h1>
 
-    <div class="card-container">
+<p>
+생명 현상을 탐구하고
+학생들의 미래를 함께 만들어가는
+생명과학 교사에 대해 알아보자.
+</p>
 
-        <div class="card">
-            <h3>📖 하는 일</h3>
-            <p>
-                생명 현상과 과학적 탐구 방법을
-                학생들에게 가르치고 실험 활동을 지도한다.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🧪 실험 지도</h3>
-            <p>
-                현미경 관찰, 세포 관찰,
-                유전 탐구 등 다양한 실험을 진행한다.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🌱 필요한 역량</h3>
-            <p>
-                생명과학 지식,
-                의사소통 능력,
-                학생 지도 능력이 필요하다.
-            </p>
-        </div>
-
-    </div>
+<button onclick="showPage('teacher')">
+시작하기
+</button>
 
 </section>
 
-<section id="biology" class="hidden">
+<!-- 교사 소개 -->
 
-    <h2 class="section-title">생명과학 교과 연계</h2>
+<section id="teacher" class="page">
 
-    <div class="card-container">
+<h2 class="title">생명과학 교사란?</h2>
 
-        <div class="card">
-            <h3>🦠 세포와 물질대사</h3>
-            <p>
-                생명체의 기본 단위인 세포와
-                에너지 생성 과정을 학습한다.
-            </p>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <h3>🧬 유전</h3>
-            <p>
-                DNA와 유전 원리를 배우고
-                형질이 전달되는 과정을 이해한다.
-            </p>
-        </div>
+<div class="card">
+<h3>📖 하는 일</h3>
+생명 현상을 가르치고 과학적 탐구 능력을 길러준다.
+</div>
 
-        <div class="card">
-            <h3>❤️ 항상성과 몸의 조절</h3>
-            <p>
-                신경계와 호르몬을 통해
-                몸의 균형이 유지되는 원리를 배운다.
-            </p>
-        </div>
+<div class="card">
+<h3>🧪 실험 지도</h3>
+현미경 관찰, 세포 관찰, 유전 탐구 등을 지도한다.
+</div>
 
-        <div class="card">
-            <h3>🌍 생태계와 환경</h3>
-            <p>
-                생물과 환경의 상호작용을
-                이해하고 생태계 보전을 탐구한다.
-            </p>
-        </div>
+<div class="card">
+<h3>🌱 필요한 역량</h3>
+전문 지식, 의사소통 능력, 학생 지도 능력이 필요하다.
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<section id="roadmap" class="hidden">
+<!-- 교과 연계 -->
 
-    <h2 class="section-title">진로 로드맵</h2>
+<section id="biology" class="page">
 
-    <div class="roadmap">
+<h2 class="title">생명과학 교과 연계</h2>
 
-        <div class="step">고등학생</div>
-        <div class="arrow">➜</div>
+<div class="cards">
 
-        <div class="step">생물교육과 진학</div>
-        <div class="arrow">➜</div>
+<div class="card">
+<h3>🦠 세포와 물질대사</h3>
+생명체의 기본 단위인 세포와 에너지 생성 과정을 학습한다.
+</div>
 
-        <div class="step">교직 과정 이수</div>
-        <div class="arrow">➜</div>
+<div class="card">
+<h3>🧬 유전</h3>
+DNA 구조와 유전 원리를 배우며 형질 전달 과정을 이해한다.
+</div>
 
-        <div class="step">임용시험 합격</div>
-        <div class="arrow">➜</div>
+<div class="card">
+<h3>❤️ 항상성과 몸의 조절</h3>
+신경계와 호르몬의 작용을 학습한다.
+</div>
 
-        <div class="step">생명과학 교사</div>
+<div class="card">
+<h3>🌍 생태계와 환경</h3>
+생물과 환경의 상호작용을 이해한다.
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<section id="dream" class="hidden">
+<!-- 로드맵 -->
 
-    <h2 class="section-title">나의 진로 탐구</h2>
+<section id="roadmap" class="page">
 
-    <div class="goal">
+<h2 class="title">생명과학 교사가 되는 과정</h2>
 
-        <p>
-            나는 생명과학에 대한 관심이 많고,
-            학생들에게 과학의 즐거움을 알려주는
-            생명과학 교사가 되고 싶다.
-        </p>
+<div class="roadmap">
 
-        <br>
+<div class="step">고등학생</div>
 
-        <p>
-            특히 세포, 유전, 생태계와 같은
-            다양한 생명 현상을 가르치며
-            학생들의 탐구 능력을 키워주는 교사가 되는 것이 목표이다.
-        </p>
+<div class="arrow">➜</div>
 
-    </div>
+<div class="step">생물교육과</div>
+
+<div class="arrow">➜</div>
+
+<div class="step">교직 이수</div>
+
+<div class="arrow">➜</div>
+
+<div class="step">임용시험</div>
+
+<div class="arrow">➜</div>
+
+<div class="step">생명과학 교사</div>
+
+</div>
+
+</section>
+
+<!-- 나의 꿈 -->
+
+<section id="dream" class="page">
+
+<h2 class="title">나의 진로 탐구</h2>
+
+<div class="goal">
+
+나는 생명과학에 흥미가 있으며,
+학생들에게 과학의 즐거움을 알려주는
+생명과학 교사가 되고 싶다.
+
+<br><br>
+
+특히 생명과학 교과에서 배우는
+세포, 유전, 생태계 단원을 활용하여
+학생들이 탐구하는 수업을 만들고 싶다.
+
+</div>
 
 </section>
 
 <footer>
-    <p>2026 생명과학 진로 탐구 프로젝트</p>
+2026 생명과학 진로 탐구 프로젝트
 </footer>
 
 <script>
 
-const hiddenElements =
-document.querySelectorAll('.hidden');
+function showPage(pageId){
 
-const observer =
-new IntersectionObserver(entries => {
+document.querySelectorAll('.page')
+.forEach(page=>{
+page.classList.remove('active');
+});
 
-entries.forEach(entry => {
+document.getElementById(pageId)
+.classList.add('active');
 
-if(entry.isIntersecting){
-entry.target.classList.add('show');
+window.scrollTo({
+top:window.innerHeight*0.8,
+behavior:'smooth'
+});
+
 }
-
-});
-
-});
-
-hiddenElements.forEach(el =>
-observer.observe(el));
 
 </script>
 
